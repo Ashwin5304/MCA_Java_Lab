@@ -52,11 +52,6 @@ class Producer extends Thread {
     public void run() {
         for (int i = 0; i < limit; i++) {
             buffer.put(i);
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                System.out.println(e);
-            }
         }
     }
 }
@@ -73,11 +68,6 @@ class Consumer extends Thread {
     public void run() {
         for (int i = 0; i < limit; i++) {
             buffer.get();
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                System.out.println(e);
-            }
         }
     }
 }
